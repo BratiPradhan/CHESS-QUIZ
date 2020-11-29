@@ -1,3 +1,7 @@
+
+// CREATED BY - BRATI PRADHAN
+// ASSIGNMENT 2 - NEOG CAMP - TANAY PRATAP SIR
+
 var readlineSync = require('readline-sync');
 var chalk = require('chalk');
 
