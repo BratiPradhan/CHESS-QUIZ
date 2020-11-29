@@ -160,7 +160,7 @@ function exitGame() {
   console.log(chalk.black.bgMagentaBright.bold('-THANK YOU TANAY PRATAP SIR FOR BEING THE AWESOME MENTOR-'));
   score = 0;
 
-  var playAgain = readlineSync.keyInYN(chalk.black.bgRed.bold('PLAY AGAIN? '));
+  var playAgain = readlineSync.keyInYN(chalk.black.bgRed.bold('BACK TO MAIN MENU? '));
   if(playAgain === true ) {
     intro();
   }
