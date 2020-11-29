@@ -192,18 +192,3 @@ function intro() {
 intro();
 
 
-
-
-
-
-
-
-
-// var user = readlineSync.question("hi? ")
-// console.log(user)
-// console.log(levelOneQuestions[0].question);
-// console.log(levelOneQuestions[0].options[0]);
-// console.log(levelOneQuestions[0].options[1]);
-// console.log(levelOneQuestions[0].options[2]);
-// console.log(levelOneQuestions[0].options[3]);
-// console.log(levelOneQuestions[0].answer);
