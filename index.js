@@ -144,12 +144,68 @@ function play() {
   }
 
   if(score === (levelOneQuestions.length + levelTwoQuestions.length + levelThreeQuestions.length )) {
-    console.log(chalk.black.bgCyanBright('WOW, YOU SCORED THE MAXIMUM, KEEP PLAYING THE GAME!!!! '))
+    console.log(chalk.black.bgCyanBright.bold('WOW, YOU SCORED THE MAXIMUM, KEEP PLAYING THE GAME!!!! '))
+    console.log('\n')
+    getHighScores()
   } else {
     console.log(chalk.black.bgRedBright.bold('KEEP PLAYING, KEEP IMPROVING'))
     console.log(chalk.black.bgCyanBright.bold('YOU EITHER WIN OR YOU LEARN!'))
+    exitGame();
   }
-  exitGame();
+  
+}
+
+
+// HIGHSCORE
+var highScorers = [
+  {
+    "name": "Harvey Spectre",
+    "score": 9
+  },
+  {
+    "name": "Harry Potter",
+    "score": 8
+  },
+  {
+    "name": "Walter White",
+    "score": 7
+  },
+  {
+    "name": "Bablu Pandit",
+    "score": 9
+  }
+]
+
+// FUNCTION: HIGH SCORES
+function getHighScores() {
+  console.log(chalk.black.bgMagentaBright.bold('------------ HIGH SCORES -------------'));
+  console.log(chalk.black.bgYellowBright.bold('--------- IF YOU ARE A HIGH SCORER... ----------'));
+  console.log(chalk.black.bgMagentaBright.bold('- SEND SCREENSHOT TO: morningbratidev@gmail.com -'));
+  console.log('\n')
+
+  // TOP SCORERS
+  for(i=0; i<highScorers.length; i++) {
+    if(highScorers[i].score === 9) {
+      console.log(chalk.black.bgBlueBright.bold(highScorers[i].name))
+    }
+  }
+
+  console.log('\n')
+
+  // PLAYED THE GAME
+  console.log(chalk.white.bgRed.bold('THOSE WHO PLAYED THE GAME...'))
+  for(i=0; i<highScorers.length; i++) {
+    console.log(chalk.black.bgBlueBright.bold(highScorers[i].name))
+    console.log(chalk.black.bgYellow.bold( 'SCORE: ' + highScorers[i].score))
+    console.log('\n')
+  }
+
+  score = 0;
+
+  var playAgain = readlineSync.keyInYN(chalk.black.bgRed.bold('BACK TO MAIN MENU? '));
+  if(playAgain === true ) {
+    intro();
+  }
 }
 
 // Exit game
@@ -178,11 +234,14 @@ function intro() {
   console.log(chalk.bgBlue('---------Hello ' +userName + '---------'));
   console.log(chalk.black.bgYellow.bold('--WELCOME TO THE CHESS QUIZ--'));
 
-  var choose = [chalk.bgCyan("PLAY GAME"), chalk.bgCyan("EXIT GAME")];
-  var index = readlineSync.keyInSelect(choose, chalk.magentaBright.bold(`Press 1 or 2, you don't need to press enter `), {cancel: false});
+  var choose = [chalk.bgCyan("PLAY GAME"), chalk.bgCyan("HIGH SCORERS"), chalk.bgCyan("EXIT GAME")];
+  var index = readlineSync.keyInSelect(choose, chalk.magentaBright.bold(`Press 1/2/3, you don't need to press enter `), {cancel: false});
 
   if(index === 0) {
     play();
+  } else if(index ===1) {
+    console.clear()
+    getHighScores()
   } else {
     console.clear()
     exitGame()
