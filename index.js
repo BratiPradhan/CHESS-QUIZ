@@ -33,7 +33,7 @@ function levelOne() {
 
   // level 1 loop 
   for(var i=0; i<levelOneQuestions.length; i++) {
-  var index = readlineSync.keyInSelect(levelOneQuestions[i].options, levelOneQuestions[i].question, {cancel: false});
+  var index = readlineSync.keyInSelect(levelOneQuestions[i].options, levelOneQuestions[i].question, {cancel: false, hideEchoBack: true, mask: chalk.magentaBright('\u2665')});
   if(levelOneQuestions[i].options[index] === levelOneQuestions[i].answer) {
     score = score + 1;
     console.log(chalk.black.bgYellowBright.bold('YOU ARE RIGHT!!!'));
@@ -72,7 +72,7 @@ function levelTwo() {
 
   // level 2 loop 
   for(var i=0; i<levelTwoQuestions.length; i++) {
-  var index = readlineSync.keyInSelect(levelTwoQuestions[i].options, levelTwoQuestions[i].question, {cancel: false});
+  var index = readlineSync.keyInSelect(levelTwoQuestions[i].options, levelTwoQuestions[i].question, {cancel: false, hideEchoBack: true, mask: chalk.magentaBright('\u2665')});
   if(levelTwoQuestions[i].options[index] === levelTwoQuestions[i].answer) {
     score = score + 1;
     console.log(chalk.black.bgYellowBright.bold('YOU ARE RIGHT!!!'));
@@ -110,7 +110,7 @@ function levelThree() {
 
   // level 3 loop 
   for(var i=0; i<levelThreeQuestions.length; i++) {
-  var index = readlineSync.keyInSelect(levelThreeQuestions[i].options, levelThreeQuestions[i].question, {cancel: false});
+  var index = readlineSync.keyInSelect(levelThreeQuestions[i].options, levelThreeQuestions[i].question, {cancel: false, hideEchoBack: true, mask: chalk.magentaBright('\u2665')});
   if(levelThreeQuestions[i].options[index] === levelThreeQuestions[i].answer) {
     score = score + 1;
     console.log(chalk.black.bgYellowBright.bold('YOU ARE RIGHT!!!'));
